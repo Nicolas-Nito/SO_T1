@@ -99,3 +99,8 @@ void hideAllTxts(){
 
 }
 
+int main(int argc, char *argv[]){
+    createMaze();
+    hideAllTxts();
+    return 1;
+}
