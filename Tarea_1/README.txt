@@ -5,4 +5,4 @@ Para compilar solo ejecutar el comando "make main" creara 2 ejecutables:
 ocultador: programa que crea el laberinto y esconde las frases en el
 buscador:  programa que busca las frases en el laberinto, las ordena y luego las imprime por consola
 
-para borrar el laberintoy los ejecutables usar "make clean"
+para borrar el laberinto y los ejecutables usar "make clean"
