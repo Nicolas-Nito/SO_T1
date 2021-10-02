@@ -16,7 +16,7 @@ void createMaze(){
     char plantilla[] = "laberinto";     //string base de la ubicacion del laberinto, este string nunca se modificara
     res = mkdir(plantilla,ACCESSPERMS); //creacion de la carpeta inicial (piso 0)
 
-    char x[3][6];
+    char x[3][6];                       //posiciones de las carpetas
     strcpy(x[0], "/1");
     strcpy(x[1], "/2");
     strcpy(x[2], "/3");
@@ -24,13 +24,13 @@ void createMaze(){
     char copia[16];
 
     
-    for(int i=0; i<3; i++){
+    for(int i=0; i<3; i++){            //iteracion que crea el primer piso del laberinto
         strcpy(copia,plantilla);
         strcat(copia,x[i]);
         res = mkdir(copia,ACCESSPERMS);
     }
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++){            //iteracion que crea el segundo piso del laberinto
         strcpy(copia,plantilla);
         res= i/3%3;
         strcat(copia,x[res]);
@@ -39,7 +39,7 @@ void createMaze(){
         //printf("%s \n",copia);
         res = mkdir(copia,ACCESSPERMS);
     }
-    for(int i=0; i<27; i++){
+    for(int i=0; i<27; i++){           //iteracion que crea el tercer piso del laberinto
         strcpy(copia,plantilla);
         res= i/9%3;
         strcat(copia,x[res]);
@@ -91,7 +91,7 @@ void hideTxt(const char *phrase){
 void hideAllTxts(){
     const char* phrase1 = "1, Los hurones del ";
     const char* phrase2 = "2, profesor de sistemas operativos son ";
-    const char* phrase3 = "3, muy bonitos ";
+    const char* phrase3 = "3, maestros de artes marciales";
     
     hideTxt(phrase1);
     hideTxt(phrase2);
